@@ -1,2 +1,2 @@
 # Pizzaria
-web application for pizza resturant ordering
+online pizza resturant website
