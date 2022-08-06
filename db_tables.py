@@ -51,3 +51,5 @@ def create_tables3():
     close_db(connect_db)
 
 create_tables3()
+
+  
