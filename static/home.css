@@ -1,0 +1,18 @@
+.card-deck{
+padding-right: 15px;
+padding-left: 15px;
+size:200px;
+
+}
+.card{
+    width: 250px;
+    height: 450px;
+    margin: 10px;
+    border-radius: 35px;
+}
+
+.card-img-top{
+    height: 300px;
+    border-radius: 15px 15px 0 0;
+   
+}

@@ -4,51 +4,30 @@
 
 
 {% block content %}
-
-
-<div class="row row-cols-1 row-cols-md-2">
-    <div class="col mb-4">
-      <div class="card">
-        <img src="../static/home-img-1.png" class="card-img-top" width="200px" height="250px" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Pepperoni Pizza</h5>
-          <p class="card-text">Size: Large</p>
-          <p class="card-text">Price: 150 LE</p>
-        </div>
-        <a href="#" class="btn btn-outline-dark my-2"><div color="black">add to cart</div></a>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card">
-        <img src="../static/home-img-2.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Pizza with Mushrom</h5>
-          <p class="card-text">Size: Large</p>
-          <p class="card-text">Price: 170 LE</p>
-        </div>
-        <a href="#" class="btn btn-outline-dark my-2"><div color="black">add to cart</div></a>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card">
-        <img src="../static/tasty-chicken-pizza-with-mushrooms-spices.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Chicken Mushrom Pizza</h5>
-          <p class="card-text">Size: Large</p>
-          <p class="card-text">Price: 150 LE</p>
-        </div>
-        <a href="#" class="btn btn-outline-dark my-2"><div color="black">add to cart</div></a>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-        <a href="#" class="btn btn-outline-dark my-2"><div color="black">add to cart</div></a>
-      </div>
+<div class="card-deck">
+  <div class="card" >
+    <img class="card-img-top" src="../static/WhatsApp Image 2022-08-06 at 10.09.50 PM.jpeg" width="270px" height="400px" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pepperoni Pizza</h5>
+      <p class="card-text">sizes:small, medium, Large</p>
+      <p class="card-text">Price 90 : 170 LE</p>
     </div>
   </div>
+  <div class="card">
+    <img class="card-img-top" src="../static/WhatsApp Image 2022-08-06 at 10.10.19 PM.jpeg"  width="270px" height="400px" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Super Supreme</h5>
+      <p class="card-text">sizes:small, medium, Large</p>
+      <p class="card-text">Price 100 : 180 LE</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="../static/WhatsApp Image 2022-08-06 at 10.10.28 PM.jpeg" width="270px" height="400px" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Sea Ranch </h5>
+      <p class="card-text">sizes:small, medium, Large</p>
+      <p class="card-text">Price 120 : 235 LE</p>
+    </div>
+  </div>
+</div>
 {% endblock %}
