@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,33 +8,32 @@
     {% block title %}<title> Pizzaria Home Page</title> {% endblock %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="static/home.css">
+  
+
   </head>
 
 
-
-  
-<body>
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">Pizzaria</a>
+ <a class="navbar-brand" href="#">Pizzaria</a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="/menu">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Pick Your Order</a>
+          <a class="nav-link" href="/make_order" >Pick Your Order</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0" action="{{url_for('Register')}}">
         
-        <button class="btn btn-outline-light my-2" type="submit"  href="/Register">Register</button>
+        <button class="btn btn-outline-light my-2" type="submit" >Register</button>
       </form>
     </div>
   </nav>
@@ -41,6 +41,24 @@
     <h5 class="card-title">Order your favourite pizza now!</h5>
     <p class="card-text"><b >Do good, Be nice, Order Pizza, Repeat</b></p>
     <a href="/menu" class="btn btn-primary">Go To Menu</a>
+  </div> -->
+  <!-- <img src="https://cdn.dribbble.com/users/2329333/screenshots/7680159/pizzerio__recovered_-01_4x.jpg" alt="Trulli" width="400" height="222"> -->
+<br>
+<br>
+
+
+
+
+  <!-- <div class="card" style="color:black">
+    <div class="card-header" style="color:black">
+      COPYRIGHTS
+    </div>
+    <div class="card-body" style="color:black">
+      <blockquote class="blockquote mb-0" style="color:black">
+        <p>Contact US AT</p>
+        <footer class="blockquote-footer">9777 <cite title="Source Title" style="color:black">.</cite></footer>
+      </blockquote>
+    </div>
   </div> -->
 {% block header %}{% endblock %}
 

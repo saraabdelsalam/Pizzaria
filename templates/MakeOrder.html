@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block title %}{% endblock %}
+{% block header %}<b>Please Write Full Data</b>{% endblock %}
+
+
+{% block content %}
+
+<form method="post">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Dish Name</label>
+      <input name="dish_name"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Size</label>
+      <input name="size" type="text" class="form-control" id="exampleInputPassword1">
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Amount</label>
+        <input name="amount" type="text" class="form-control" id="exampleInputPassword1">
+        <small id="emailHelp" class="form-text text-muted"></small>
+      </div>
+    
+    <button type="submit" class="btn btn-outline-light my-2">Checkout</button>
+  </form>
+{% endblock %}

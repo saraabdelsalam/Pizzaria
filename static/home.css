@@ -1,4 +1,9 @@
-.card-deck{
+body {
+    background-image: url('../static/WhatsApp\ Image\ 2022-08-07\ at\ 2.34.12\ PM.jpeg');
+}
+
+
+.card-deck{  
 padding-right: 15px;
 padding-left: 15px;
 size:200px;
@@ -15,4 +20,8 @@ size:200px;
     height: 300px;
     border-radius: 15px 15px 0 0;
    
+}
+.button{
+    padding-top: 30px;
+   padding-left: 580px;
 }
