@@ -1,5 +1,10 @@
-body {
-    background-image: url('../static/WhatsApp\ Image\ 2022-08-07\ at\ 2.34.12\ PM.jpeg');
+body{
+    background-image: url('/static/94724714-italian-pizza-on-white-wooden-background.webp') ;
+    
+    background-size:cover;
+   
+    
+
 }
 
 
@@ -11,7 +16,7 @@ size:200px;
 }
 .card{
     width: 250px;
-    height: 450px;
+    height: 500px;
     margin: 10px;
     border-radius: 35px;
 }

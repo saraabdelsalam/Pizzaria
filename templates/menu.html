@@ -1,54 +1,31 @@
 {% extends 'main.html' %}
-{% block title %}<title>Menu Page</title> {% endblock %}
-{% block header %}{% endblock %}
-
 
 {% block content %}
-<div class="card-deck">
-  <div class="card" >
-    <img class="card-img-top" src="../static/WhatsApp Image 2022-08-06 at 10.09.50 PM.jpeg" width="270px" height="400px" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Pepperoni Pizza</h5>
-      <p class="card-text">sizes:small, medium, Large</p>
-      <p class="card-text">Price 90 : 170 LE</p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="../static/WhatsApp Image 2022-08-06 at 10.10.19 PM.jpeg"  width="270px" height="400px" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Super Supreme</h5>
-      <p class="card-text">sizes:small, medium, Large</p>
-      <p class="card-text">Price 100 : 180 LE</p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="../static/WhatsApp Image 2022-08-06 at 10.10.28 PM.jpeg" width="270px" height="400px" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Sea Ranch </h5>
-      <p class="card-text">sizes:small, medium, Large</p>
-      <p class="card-text">Price 120 : 235 LE</p>
-    </div>
-  </div>
 
-  <div class="card">
-    <img class="card-img-top" src="../static/homemade-vegan-margherita-pizza-food-photography.jpg" width="270px" height="400px" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Vegan Margherita</h5>
-      <p class="card-text">sizes:small, medium, Large</p>
-      <p class="card-text">Price 120 : 235 LE</p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="../static/Buffalo Chicken Pizza Recipe.jpg" width="270px" height="400px" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Bufflo Chicken Pizza </h5>
-      <p class="card-text">sizes:small, medium, Large</p>
-      <p class="card-text">Price 120 : 235 LE</p>
-    </div>
-  </div> 
-</div>
-<div class="button" action="{{url_for('make_order')}}">
     
-  <button class="btn btn-outline-light my-2" type="submit" >Pick Your Order</button>
-</div>
+<div class="card-deck">
+
+    {% for row in data %}
+    <div class="card" style="width: 18rem;">
+      <img src="/static/mixed-ingredient-pizza-wooden-board.jpg" class="card-img-top" alt="...">
+      
+      <div class="card-body">
+        <h5 class="card-title">{{row.name}}</h5>
+        <p class="card-text">{{row.size}}</p>
+        <p class="card-text">{{row.price}}</p>
+        
+          <form action="{{url_for('make_order')}}">
+
+            <input type="hidden" name="name" value="{{row.name}}">
+            
+            <button type="submit" class="btn" name="name">Add to Cart</button>  
+          </form>
+
+      </div>
+    </div>
+      
+    {% endfor %}
+  
+  </div>
 {% endblock %}
+

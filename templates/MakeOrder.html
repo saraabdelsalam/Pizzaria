@@ -1,27 +1,32 @@
 {% extends 'main.html' %}
 {% block title %}{% endblock %}
-{% block header %}<b>Please Write Full Data</b>{% endblock %}
+{% block header %}{% endblock %}
 
 
 {% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Pizza Name</th>
+      <th scope="col">Size</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {total=0}
+   {% for row in result %}
 
-<form method="post">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Dish Name</label>
-      <input name="dish_name"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <small id="emailHelp" class="form-text text-muted"></small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Size</label>
-      <input name="size" type="text" class="form-control" id="exampleInputPassword1">
-      <small id="emailHelp" class="form-text text-muted"></small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Amount</label>
-        <input name="amount" type="text" class="form-control" id="exampleInputPassword1">
-        <small id="emailHelp" class="form-text text-muted"></small>
-      </div>
-    
-    <button type="submit" class="btn btn-outline-light my-2">Checkout</button>
-  </form>
+   <tr>
+      <th scope="row">--</th>
+      <td>{{row.name}}</td>
+      <td>{{row.size}}</td>
+      <td>{{row.price}}</td> 
+    </tr>
+    {total+=row.price}
+      {% endfor %}
+      <tr> {total}</tr>
+  </tbody>
+</table>
+
 {% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block title %} {% endblock %}
+{% block header %} <h2>Available Branches. </h2> {% endblock %}
+{% block content %}
+<table class="table"  table-bordered>
+    <thead class="table-active">
+      <tr class="table-active">
+        <th scope="col">Branch</th>
+        <th scope="col">Time </th>
+        <th scope="col">Hotline</th>
+      </tr>
+    </thead>
+    <tbody >
+     {% for row in result %}
+     <tr>
+        
+        <td class="table-active" ><b>{{row.branch_name}}</b></td>
+        <td class="table-active"><b>{{row.time}}</b></td>
+        <td class="table-active" ><b>{{row.hotline}}</b></td>
+      </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

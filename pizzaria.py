@@ -1,61 +1,103 @@
 from sqlite3 import connect
 from unittest import result
-from flask import redirect, request, url_for
+from flask import redirect, request, url_for,flash
 from flask import Flask
 from flask import render_template
-import db 
+import db
 
 app= Flask(__name__)
-
 @app.route('/')
 def home_page():
 
     return render_template('main.html')
 
 
-@app.route('/Register', methods=['GET','POST'])
+
+
+@app.route('/Register',methods=['GET', 'POST'])
 def Register():
-    if request.method=="POST":
-        name = request.form['name']
-        email= request.form['email']
+    
+    if request.method== 'POST':
+        email=request.form['email']
         password= request.form['password']
-        address= request.form['address']
-        connect= db.get_db()
-        connect.execute(f"""INSERT INTO users(name,email,password,address)VALUES('{name}', '{email}', '{password}','{address}');""")
-        connect.commit()
-        db.close_db(connect)
+        name= request.form['name']
+        address=request.form['address']
+        conn=db.get_db()
+        conn.execute("""INSERT INTO user(email,password,name,address)Values('{email}','{password}','{name}',
+            '{address}');  """)   
+        conn.commit()
+        return redirect(url_for('home_page'))    
+
     return render_template('register.html')    
 
-@app.route('/menu',methods=['GET', 'POST'])
-def menu():
-    #if request.method=="POST":
-        # # pizza_name = request.form['pizza_name']
-        # # size= request.form['size']
-        # # price= request.form['price']
-        # connect= db.get_db()
-        # connect.execute(f"""INSERT INTO menu(pizza_name,size,price)VALUES('chicken ranch', 'large', 140);""")
-        # connect.commit()
-        # db.close_db(connect)
-        # conn= db.get_db()
-        # conn.execute('SELECT * FROM menu')
-        # data= conn.fetchone()
-    #return render_template('menu.html', data=data)
-    return render_template('menu.html')
 
-@app.route('/make_order', methods=['GET', 'POST'])
-def make_order():
-    if request.method =="POST" :
-        name = request.form['dish_name']
+
+@app.route('/menu_admin',methods=['GET', 'POST'])
+def menu_admin():
+    if request.method =="POST":
+        name = request.form['name']
         size = request.form['size']
-        amount = request.form['amount']
+        price = request.form['price']
         connect= db.get_db()
-        connect.execute(f""" INSERT INTO orders (dish_name, size, amount)
-                             VALUES('{name}','{size}','{amount}');""")
+        connect.execute(f""" INSERT INTO menu (name, size, price)
+                             VALUES('{name}','{size}','{price}');""")
         connect.commit()
         db.close_db(connect)
-    return render_template('MakeOrder.html')       
+        return redirect(url_for('menu'))
+    return render_template('menu_admin.html')
+
+
+@app.route('/menu')
+def menu():
+     connect= db.get_db().cursor()
+     connect.execute('SELECT * FROM menu;')
+     data= connect.fetchall()
+     return render_template('menu.html',data = data)
+
+
+@app.route('/branches',methods=['GET', 'POST'])
+def branches_admin():
+    if request.method =="POST" :
+        branch_name = request.form['branch_name']
+        time = request.form['time']
+        hotline = request.form['hotline']
+        connect= db.get_db()
+        connect.execute(f""" INSERT INTO branch (branch_name,time ,hotline)
+                             VALUES('{branch_name}','{time}','{hotline}');""")
+        connect.commit()
+        db.close_db(connect)
+    return render_template('branches_admin.html')
+
+
+@app.route('/search',methods=['GET','POST'])
+def search():
+       if request.method=="POST":
+        search= request.form['search']
+        con= db.get_db().cursor()
+        con.execute(f"""SELECT * FROM branch WHERE branch_name='{search}';""")
+        result=con.fetchall()
+        db.close_db(con)
+        
+       return render_template('search.html',result=result )        
+
 
 
 @app.route('/payment')
 def payment():
-    render_template()    
+    connect= db.get_db().cursor()
+    connect.execute('SELECT * FROM orders')
+    data= connect.fetchall()
+    return render_template('payment.html',data=data)
+
+
+
+@app.route('/make_order')
+def make_order(name=None):
+    
+        conn= db.get_db().cursor()
+        conn.execute(f"""SELECT * FROM menu WHERE name='{name}';""")
+        result=conn.fetchall()
+        db.close_db(conn)
+        return render_template('MakeOrder.html',result=result) 
+
+

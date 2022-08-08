@@ -30,10 +30,14 @@
         <li class="nav-item">
           <a class="nav-link" href="/make_order" >Pick Your Order</a>
         </li>
+        <form method="post" class="d-flex" role="search" action="{{url_for('search')}}">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="search">Search</button>
+        </form>
       </ul>
       <form class="form-inline my-2 my-lg-0" action="{{url_for('Register')}}">
         
-        <button class="btn btn-outline-light my-2" type="submit" >Register</button>
+        <button class="btn btn-outline-light my-2" type="submit"  >Register</button>
       </form>
     </div>
   </nav>
@@ -43,8 +47,9 @@
     <a href="/menu" class="btn btn-primary">Go To Menu</a>
   </div> -->
   <!-- <img src="https://cdn.dribbble.com/users/2329333/screenshots/7680159/pizzerio__recovered_-01_4x.jpg" alt="Trulli" width="400" height="222"> -->
-<br>
-<br>
+  
+  
+  
 
 
 
@@ -63,10 +68,15 @@
 {% block header %}{% endblock %}
 
 
-{% block content %}
-
+{% block content %} 
+<div class="jumbotron">
+  <h1 class="display-4"><b>WELCOME TO PIZZARIA</b></h1>
+  <p class="lead">Please enjoy pur website</p>
+  <hr class="my-4">
+  <p>Pizzaria, operated by Marco's Franchising, LLC, is an American restaurant chain and interstate franchise based in Toledo, Ohio, that specializes in Italian-American cuisine. The first store was opened in Oregon, Ohio on Starr Ave. It was founded by Italian immigrant Pasquale "Pat" Giammarco in 1978.</p>
+  <a class="btn btn-dark btn-lg" href="#" role="button">For furthur more information</a>
+</div>
 {% endblock %}
- 
  
 </body>
 </html>
