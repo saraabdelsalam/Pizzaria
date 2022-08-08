@@ -13,14 +13,10 @@
         <h5 class="card-title">{{row.name}}</h5>
         <p class="card-text">{{row.size}}</p>
         <p class="card-text">{{row.price}}</p>
-        
-          <form action="{{url_for('make_order')}}">
-
-            <input type="hidden" name="name" value="{{row.name}}">
-            
-            <button type="submit" class="btn" name="name">Add to Cart</button>  
-          </form>
-
+        <p class="card-text" value="{{row.name}}" >
+           <a href="{{url_for('make_order',name=row.name)}}"> Add To Cart</a>
+          </p>
+          
       </div>
     </div>
       

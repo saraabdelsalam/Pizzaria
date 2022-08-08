@@ -91,13 +91,14 @@ def payment():
 
 
 
-@app.route('/make_order')
+@app.route('/make_order/<name>')
 def make_order(name=None):
     
         conn= db.get_db().cursor()
         conn.execute(f"""SELECT * FROM menu WHERE name='{name}';""")
         result=conn.fetchall()
         db.close_db(conn)
+        
         return render_template('MakeOrder.html',result=result) 
 
 

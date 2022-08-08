@@ -1,6 +1,6 @@
 {% extends 'main.html' %}
-{% block title %}{% endblock %}
-{% block header %}{% endblock %}
+{% block title %}<title>Your Order </title>{% endblock %}
+{% block header %}Orders Details{% endblock %}
 
 
 {% block content %}
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    {total=0}
+    
    {% for row in result %}
 
    <tr>
@@ -23,9 +23,9 @@
       <td>{{row.size}}</td>
       <td>{{row.price}}</td> 
     </tr>
-    {total+=row.price}
+    
       {% endfor %}
-      <tr> {total}</tr>
+      
   </tbody>
 </table>
 
