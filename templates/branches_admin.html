@@ -1,28 +1,28 @@
-{{% extends 'main.html' %}
-{% block title %}<title>Menu </title> {% endblock %}
-{% block header %}Dishes Details{% endblock %}
+{% extends 'main.html' %}
+{% block title %}<title> Add New Branch </title> {% endblock %}
+{% block header %}{% endblock %}
 
 
 {% block content %}
-<form method="post">
+<form method="post" class="center-2">
 
-  <div class="form-group">
-    <label style="font-size: 25px"for="exampleInputEmail1">Branch Name</label>
+  <div class="form-group-2">
+    <label style="font-size: 15px"for="exampleInputEmail1">Branch Name</label>
     <input name="branch_name"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <small id="emailHelp" class="form-text text-muted"></small>
   </div>
-  <div class="form-group">
-    <label style="font-size: 25px" for="exampleInputPassword1">Time</label>
+  <div class="form-group-2">
+    <label style="font-size: 15px" for="exampleInputPassword1">Time</label>
     <input name="time" type="text" class="form-control" id="exampleInputPassword1">
     <small id="emailHelp" class="form-text text-muted"></small>
   </div>
-  <div class="form-group">
-      <label style="font-size: 25px" for="exampleInputPassword1">HotLine</label>
+  <div class="form-group-2">
+      <label style="font-size: 15px" for="exampleInputPassword1">HotLine</label>
       <input name="hotline" type="text" class="form-control" id="exampleInputPassword1">
       <small id="emailHelp" class="form-text text-muted"></small>
     </div>
 
-    <button type="submit" class="btn btn-dark">Save</button>
+    <button type="submit" class="btn btn-dark" style="margin: 12px;">Save</button>
   
   
 </form>

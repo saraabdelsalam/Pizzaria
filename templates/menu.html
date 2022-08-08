@@ -1,5 +1,5 @@
 {% extends 'main.html' %}
-
+{% block title %}<title>Pizzaria's Menu </title>{% endblock %}
 {% block content %}
 
     
@@ -7,7 +7,7 @@
 
     {% for row in data %}
     <div class="card" style="width: 18rem;">
-      <img src="/static/mixed-ingredient-pizza-wooden-board.jpg" class="card-img-top" alt="...">
+      <img src="/static/images/{{row.name}}.jpg" class="card-img-top" alt="...">
       
       <div class="card-body">
         <h5 class="card-title">{{row.name}}</h5>
